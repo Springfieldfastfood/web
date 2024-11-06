@@ -1,0 +1,241 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', 'Roboto', sans-serif; /* Estilo tipo "cómico" para darle un toque Simpsons */
+}
+
+body {
+    background-color: #fdd835; /* Amarillo Simpsons */
+    color: #000000; /* Texto negro */
+    font-size: 16px;
+    display: flex;
+    min-height: 100vh;
+}
+
+h2, h3 {
+    color: #f57f17; /* Amarillo oscuro */
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Estilo del menú lateral */
+#sidebar {
+    background-color: #0277bd; /* Azul Simpson (Cielo) */
+    color: white;
+    width: 250px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+#sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ff3d00; /* Rojo intenso de Bart */
+    padding-bottom: 10px;
+}
+
+#sidebar p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.menu-section ul li {
+    margin: 10px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-section ul li::before {
+    content: "🍔"; /* Hamburguesa como ícono por ser Springfield Fast Food */
+    margin-right: 10px;
+}
+
+/* Contenido principal */
+#main-content {
+    margin-left: 270px;
+    padding: 40px;
+    flex-grow: 1;
+}
+
+#cart-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff3d00; /* Rojo intenso para botones */
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#cart-button:hover {
+    background-color: #d32f2f;
+}
+
+#cart-button button {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font-size: 16px;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0277bd; /* Azul Springfield */
+}
+
+.product span {
+    font-size: 16px;
+    color: #f57f17; /* Amarillo Simpsons */
+    margin-bottom: 10px;
+    display: block;
+}
+
+.product button {
+    background-color: #ff3d00;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+    background-color: #d32f2f;
+}
+
+/* Sección del carrito */
+#carrito {
+    margin-top: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+#lista-carrito li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#total-carrito {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0277bd;
+}
+
+#carrito button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff3d00;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#carrito button:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilos para las secciones */
+#ahorros, #destacados {
+    margin-bottom: 40px;
+}
+
+.ahorro-banner {
+    background-color: #fff5e6;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ahorro-banner p {
+    color: #000;
+    font-size: 18px;
+}
+
+.ahorro-banner button {
+    background-color: #ff3d00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ahorro-banner button:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 200px;
+    }
+
+    #main-content {
+        margin-left: 220px;
+        padding: 20px;
+    }
+
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #carrito {
+        max-width: 90%;
+    }
+}
